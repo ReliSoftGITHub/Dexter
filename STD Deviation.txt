@@ -1,0 +1,35 @@
+
+public class Main
+{
+    
+    public static void main(String[] args) {
+        double[] numbers = {4569699.31,3396540.19,4657172.36};
+        double standardDeviation = calculateStandardDeviation(numbers);
+        System.out.println("Standard Deviation: " + standardDeviation);
+	}
+    
+        public static double calculateStandardDeviation(double[] array) {
+    
+        // get the sum of array
+        double sum = 0.0;
+        for (double i : array) {
+            sum += i;
+        }
+    
+        // get the mean of array
+        int length = array.length;
+        double mean = sum / length;
+    
+        // calculate the standard deviation
+        double standardDeviation = 0.0;
+        for (double num : array) {
+            standardDeviation += Math.pow(num - mean, 2);
+        }
+    
+        return Math.sqrt(standardDeviation / length);
+    }
+}
+
+
+List<Map<String, Object>> userName = jdbcTemplate
+                .queryForList("SELECT linkedin_handle, profile_id FROM doctor_profile");
